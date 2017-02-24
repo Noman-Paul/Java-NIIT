@@ -1,0 +1,20 @@
+// find intersection of 2 arrays
+public class arrayIntersection {
+public static void main(String args[]){
+	int[] a={1,2,3,4,5};
+	int[] b={4,5,6,7,8};
+	System.out.println("The two arrays are: ");
+	for(int i=0;i<5;i++)
+		System.out.print(a[i]+" ");
+	System.out.println();
+	for(int i=0;i<5;i++)
+		System.out.print(b[i]+" ");
+	System.out.println("\nThe intersection is ");
+	for(int i=0;i<5;i++)
+		for(int j=0;j<5;j++)
+		{
+			if(a[i]==b[j])
+				System.out.print(a[i]+" ");
+		}
+}
+}
