@@ -1,0 +1,13 @@
+//Find if 2 strings are rotationally equal
+public class rotStrings {
+	public static void main(String args[]){
+		String s1="abc",s2="bca",s3;
+		System.out.println("Strings are "+s1+" and "+s2);
+        s3=s1+s1;
+        if(s3.contains(s2))
+        	System.out.println("Rotational strings !");
+        else
+        	System.out.println("Non Rotational strings !");
+	}
+
+}
