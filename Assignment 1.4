@@ -1,0 +1,19 @@
+//nth smallest number in an unsorted array
+public class nthSmallestNum {
+	public static void main(String args[]){
+		int n=2,a[]={2,7,4,9,1,5,6,8},temp;
+		for (int i = 0; i < 8; i++) 
+        {   for (int j = i + 1; j < 8; j++) 
+            {   if (a[i] < a[j]) 
+                {   temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+		System.out.println("The sorted array is: ");
+		for(int i=0;i<8;i++)
+			System.out.print(a[i]+" ");
+		System.out.println("\nThe "+n+"th smallest element is: "+a[n-1]);
+    }
+}
