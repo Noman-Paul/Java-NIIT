@@ -1,0 +1,63 @@
+//Show implementation of stack operations
+//Class with main function consisting of menu driven options
+public class stackOp {
+	public static void main(String args[]){
+		stackMain s=new stackMain();
+		int op[]={1,1,1,1,2,2,2,3},ex=0;
+		System.out.println("\t----------\n\t- Menu:  -\n\t- 1.Push -\n\t- 2.Pop  -\n\t- 3.Exit -\n\t----------");
+		for(int i=0;i<op.length-1;i++){
+			switch(op[i]){
+			case 1:
+				s.push();
+				break;
+			case 2:
+				s.pop();
+				break;
+			case 3:
+				ex++;
+				System.exit(0);
+		    default:
+		    	System.out.println("\n\tError!! Invalid Input\n");
+			}
+			if(ex==1){
+				System.out.println("\nProgram Terminated..!!");
+				break;
+		    }
+		}
+	}
+} 
+
+----------------------------------------------------------------------------------------------------------------------------
+
+//operations performing class
+import java.util.Random;
+public class stackMain extends stackOp {
+	private int a[]=new int[11];
+	Random rand = new Random();
+	private int top=-1;
+	protected int push(){
+		if(top==a.length-1){
+			System.out.println("\nStack Overflow!!\nProgram Terminated\n");
+			System.exit(0);
+		}
+		int  n = rand.nextInt(100) + 1; // accepting random num between 1 - 100 
+		a[++top]=n;
+		print();
+		return 0;
+	}
+	protected int pop(){
+		if(top==-1){
+			System.out.println("\nStack Underflow!!\nProgram Terminated\n");
+			System.exit(0);
+		}
+		top--;
+		print();
+		return 0;
+	}
+	private void print(){
+		System.out.print("Stack->");
+		for(int i=0;i<top;i++)
+			System.out.print(a[i]+" ");
+		System.out.println();
+	}
+}
